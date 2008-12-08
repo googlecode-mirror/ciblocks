@@ -1,4 +1,4 @@
-#documentation about database table of ciblocks
+# documentation about database table of ciblocks
 
 = Description of the ciblocks Table: =
 
@@ -21,14 +21,25 @@ region: In which region in the layout will the block
 = SQL file for mysql =
 
 CREATE TABLE `ciblocks` (
+
   `id` int(11) NOT NULL auto_increment,
+
   `name` varchar(50) collate utf8_unicode_ci NOT NULL,
+
   `title` varchar(100) collate utf8_unicode_ci NOT NULL,
+
   `body` text collate utf8_unicode_ci NOT NULL,
+
   `roles` varchar(50) collate utf8_unicode_ci NOT NULL default '0',
+
   `visibility` tinyint(4) NOT NULL default '0',
+
   `visibility_pages` varchar(255) collate utf8_unicode_ci NOT NULL,
+
   `weight` tinyint(4) NOT NULL default '0',
+
   `region` varchar(50) collate utf8_unicode_ci NOT NULL,
+
   PRIMARY KEY  (`id`)
+
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
