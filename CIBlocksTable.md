@@ -1,0 +1,45 @@
+# documentation about database table of ciblocks
+
+# Description of the ciblocks Table: #
+
+id: Auto incremental value, just to recognize each block
+
+name: The name that the block has, for administrative purposes, to recognize the block
+
+title: The title that is being displayed to the public, leave blank if no title at all
+
+body: The content body of the block, it can be both html or php
+
+roles: which have permissions to see the block
+
+visibility: 0 for all pages, 1 all except those described in visibility\_pages, 2 none except those described in visibility\_pages
+
+visibility\_pages: The different pages that the block should or should not be displayed
+
+region: In which region in the layout will the block
+
+# SQL file for mysql #
+
+CREATE TABLE `ciblocks` (
+
+> `id` int(11) NOT NULL auto\_increment,
+
+> `name` varchar(50) collate utf8\_unicode\_ci NOT NULL,
+
+> `title` varchar(100) collate utf8\_unicode\_ci NOT NULL,
+
+> `body` text collate utf8\_unicode\_ci NOT NULL,
+
+> `roles` varchar(50) collate utf8\_unicode\_ci NOT NULL default '0',
+
+> `visibility` tinyint(4) NOT NULL default '0',
+
+> `visibility_pages` varchar(255) collate utf8\_unicode\_ci NOT NULL,
+
+> `weight` tinyint(4) NOT NULL default '0',
+
+> `region` varchar(50) collate utf8\_unicode\_ci NOT NULL,
+
+> PRIMARY KEY  (`id`)
+
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8\_unicode\_ci;
